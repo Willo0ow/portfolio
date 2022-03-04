@@ -1,7 +1,7 @@
 <template>
   <section-frame id="home">
     <template #content>
-      <div class="main-title">
+      <div class="main-title primary--text">
         I'm Dorota, <br />
         Frontend Developer,<br />
         ...and more
@@ -10,7 +10,7 @@
         style="max-width: 300px"
         @click="scrollToSection('#contact')"
         x-large
-        color="primary"
+        color="secondary"
         outlined
         >Contact me</v-btn
       >
