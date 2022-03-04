@@ -27,10 +27,11 @@
   </v-navigation-drawer>
 </template>
 <script>
-import { mapMutations } from "vuex";
+import scrollToSection from "@/mixins/scrollToSection.js";
 
 export default {
   name: "NavigationSideBar",
+  mixins: [scrollToSection],
   data() {
     return {
       links: [
@@ -47,13 +48,6 @@ export default {
         return "three-line";
       }
       return "two-line";
-    },
-  },
-  methods: {
-    ...mapMutations(["setActiveSection"]),
-    scrollToSection(sectionId) {
-      this.setActiveSection(sectionId);
-      this.$vuetify.goTo(sectionId, { duration: 1000 });
     },
   },
 };

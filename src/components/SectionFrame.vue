@@ -1,7 +1,11 @@
 <template>
-  <v-card :height="$root.windowHeight" min-height="300" class="ma-5" :id="id">
+  <v-container
+    :style="{ height: `${$root.windowHeight}px`, 'min-height': '300px' }"
+    class="ma-5 d-flex flex-column justify-center"
+    :id="id"
+  >
     <slot name="content"></slot>
-  </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -12,4 +16,3 @@ export default {
   },
 };
 </script>
-<style scoped></style>
