@@ -1,8 +1,20 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <v-navigation-drawer permanent app>
+      <v-list>
+        <v-list-item class="d-flex flex-column align-center">
+          <v-avatar height="100" width="100">
+            <v-img src="@/assets/author.jpeg"></v-img>
+          </v-avatar>
+          <div class="text-h6">Dorota Hinc</div>
+          <div>Frontend Developer</div>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-main>
+      <HelloWorld />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
