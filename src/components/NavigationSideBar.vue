@@ -43,14 +43,10 @@ export default {
   },
   computed: {
     itemHeight() {
-      switch (this.$root.breakpoint) {
-        case "xs" || "sm":
-          return "two-line";
-        case "md" || "lg" || "xl":
-          return "three-line";
-        default:
-          return "two-line";
+      if (this.$root.windowHeight > 700) {
+        return "three-line";
       }
+      return "two-line";
     },
   },
   methods: {
