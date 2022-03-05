@@ -3,20 +3,26 @@
     <template #content>
       <v-row>
         <v-col>
-          <v-list>
-            <v-list-item v-for="(skill, idx) of skills" :key="idx">
-              <v-list-item-avatar>
-                <v-img :src="require(`@/assets/${skill.logo}`)"></v-img>
-              </v-list-item-avatar>
-              <v-list-item-content class="pl-5">
-                <v-list-item-title class="skill-name">{{
-                  skill.label
-                }}</v-list-item-title>
-                <v-list-item-subtitle class="skill-text">{{
-                  skill.text
-                }}</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+          <v-list class="transparent" shaped>
+            <v-hover
+              v-slot="{ hover }"
+              v-for="(skill, idx) of skills"
+              :key="idx"
+            >
+              <v-list-item :class="{ 'hovered-item': hover }">
+                <v-list-item-avatar>
+                  <v-img :src="require(`@/assets/${skill.logo}`)"></v-img>
+                </v-list-item-avatar>
+                <v-list-item-content class="pl-5">
+                  <v-list-item-title class="skill-name">{{
+                    skill.label
+                  }}</v-list-item-title>
+                  <v-list-item-subtitle class="skill-text">{{
+                    skill.text
+                  }}</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+            </v-hover>
           </v-list>
         </v-col>
       </v-row>
@@ -81,5 +87,8 @@ export default {
 .skill-name,
 .skill-text {
   text-align: start;
+}
+.hovered-item {
+  background: #9d90a657;
 }
 </style>

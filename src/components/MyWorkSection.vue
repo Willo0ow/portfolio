@@ -3,7 +3,7 @@
     <template #content>
       <v-container fluid>
         <v-row fluid>
-          <v-col v-for="n in 8" :key="n" class="d-flex child-flex" cols="3">
+          <v-col v-for="n in 8" :key="n" class="d-flex child-flex">
             <v-hover>
               <template v-slot:default="{ hover }">
                 <v-img
@@ -11,6 +11,8 @@
                   :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
                   aspect-ratio="1"
                   class="grey lighten-2"
+                  width="200"
+                  max-height="200"
                 >
                   <template v-slot:placeholder>
                     <v-row

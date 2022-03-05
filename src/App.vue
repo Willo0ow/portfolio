@@ -2,11 +2,13 @@
   <v-app v-resize="onResize">
     <navigation-side-bar></navigation-side-bar>
     <v-main>
-      <home-section></home-section>
-      <me-section />
-      <my-skills-section></my-skills-section>
-      <my-work-section></my-work-section>
-      <contact-section></contact-section>
+      <v-img src="@/assets/background.jpg" height="100%">
+        <home-section></home-section>
+        <me-section />
+        <my-skills-section></my-skills-section>
+        <my-work-section></my-work-section>
+        <contact-section></contact-section>
+      </v-img>
     </v-main>
   </v-app>
 </template>
@@ -47,6 +49,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: #342d50;
 }
 </style>
