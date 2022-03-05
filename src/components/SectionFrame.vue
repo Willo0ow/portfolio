@@ -1,7 +1,7 @@
 <template>
   <v-container
     :style="{
-      height: `${$root.windowHeight}px`,
+      height: `${$root.windowHeight - 64}px`,
       'min-height': '300px',
       'border-bottom': '1px solid black',
     }"

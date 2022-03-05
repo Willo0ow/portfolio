@@ -1,33 +1,26 @@
 <template>
-  <v-navigation-drawer permanent app width="180" color="ternary">
-    <v-list
-      :two-line="itemHeight === 'two-line'"
-      :three-line="itemHeight === 'three-line'"
+  <v-app-bar app>
+    <v-toolbar-title @click="scrollToSection('#home')">
+      <v-img
+        max-height="70"
+        contain
+        src="@/assets/willo0ow_logotyp_small.png"
+      ></v-img>
+    </v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-btn
+      @click="scrollToSection(link.target)"
+      v-for="(link, idx) of links"
+      :key="idx"
+      :plain="!checkIfSectionActive(link.target)"
+      :outlined="checkIfSectionActive(link.target)"
+      >{{ link.text }}</v-btn
     >
-      <v-list-item
-        class="d-flex flex-column align-center"
-        @click="scrollToSection('#home')"
-      >
-        <v-avatar height="100" width="100">
-          <v-img src="@/assets/author.jpeg"></v-img>
-        </v-avatar>
-        <div class="text-h6">Dorota Hinc</div>
-        <div>Frontend Developer</div>
-      </v-list-item>
-      <v-divider></v-divider>
-      <div v-for="(link, idx) of links" :key="idx">
-        <v-list-item @click="scrollToSection(link.target)">
-          <v-list-item-content>
-            <v-list-item-title>{{ link.text }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-divider></v-divider>
-      </div>
-    </v-list>
-  </v-navigation-drawer>
+  </v-app-bar>
 </template>
 <script>
 import scrollToSection from "@/mixins/scrollToSection.js";
+import { mapState } from "vuex";
 
 export default {
   name: "NavigationSideBar",
@@ -43,11 +36,19 @@ export default {
     };
   },
   computed: {
+    ...mapState({
+      activeSection: (state) => state.activeSection,
+    }),
     itemHeight() {
       if (this.$root.windowHeight > 700) {
         return "three-line";
       }
       return "two-line";
+    },
+  },
+  methods: {
+    checkIfSectionActive(sectionTarget) {
+      return this.activeSection === sectionTarget;
     },
   },
 };
