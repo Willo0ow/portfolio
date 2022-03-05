@@ -5,7 +5,14 @@
     :id="id"
     @mouseenter="setActiveSection(`#${id}`)"
   >
-    <slot name="content"></slot>
+    <div>
+      <v-row v-if="title">
+        <v-col>
+          <h2 class="section-title">{{ title }}</h2>
+        </v-col>
+      </v-row>
+      <slot name="content"></slot>
+    </div>
   </v-container>
 </template>
 
@@ -15,9 +22,19 @@ export default {
   name: "SectionFrame",
   props: {
     id: { type: String, required: true },
+    title: { type: String, default: "" },
   },
   methods: {
     ...mapMutations(["setActiveSection"]),
   },
 };
 </script>
+<style>
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: start;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+</style>

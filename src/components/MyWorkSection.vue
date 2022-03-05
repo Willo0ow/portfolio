@@ -1,8 +1,6 @@
 <template>
-  <section-frame id="work">
-    <template #content>
-      <v-card-text>My work</v-card-text>
-    </template>
+  <section-frame id="work" title="My Work">
+    <template #content> </template>
   </section-frame>
 </template>
 
