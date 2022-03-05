@@ -1,11 +1,6 @@
 <template>
-  <section-frame id="skills">
+  <section-frame id="skills" title="My Skills">
     <template #content>
-      <v-row>
-        <v-col>
-          <v-card-title>My skills</v-card-title>
-        </v-col>
-      </v-row>
       <v-row>
         <v-col>
           <v-list>
