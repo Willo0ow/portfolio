@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer permanent app width="180">
+  <v-navigation-drawer permanent app width="180" color="ternary">
     <v-list
       :two-line="itemHeight === 'two-line'"
       :three-line="itemHeight === 'three-line'"
