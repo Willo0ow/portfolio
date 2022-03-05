@@ -1,7 +1,11 @@
 <template>
   <v-container
-    :style="{ height: `${$root.windowHeight}px`, 'min-height': '300px' }"
-    class="ma-5 d-flex flex-column justify-center"
+    :style="{
+      height: `${$root.windowHeight}px`,
+      'min-height': '300px',
+      'border-bottom': '1px solid black',
+    }"
+    class="pa-5 d-flex flex-column justify-center"
     :id="id"
     @mouseenter="setActiveSection(`#${id}`)"
   >
